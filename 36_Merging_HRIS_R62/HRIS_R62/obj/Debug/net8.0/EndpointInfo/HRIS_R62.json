@@ -1,0 +1,2086 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "HRIS_R62",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/OverTimes": {
+      "get": {
+        "tags": [
+          "OverTimes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OverTime"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OverTime"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OverTime"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "OverTimes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OverTime"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OverTime"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OverTime"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OverTime"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OverTime"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OverTime"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/OverTimes/{id}": {
+      "get": {
+        "tags": [
+          "OverTimes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OverTime"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OverTime"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OverTime"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "OverTimes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OverTime"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OverTime"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OverTime"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "OverTimes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AttendanceBonus": {
+        "type": "object",
+        "properties": {
+          "attendanceBonusID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "bonusAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "bonusCategory": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeInformation": {
+            "$ref": "#/components/schemas/EmployeeInformation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AttendanceRecord": {
+        "required": [
+          "attendanceDate"
+        ],
+        "type": "object",
+        "properties": {
+          "attendanceRecordID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "attendanceDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "inTime": {
+            "type": "string",
+            "format": "time"
+          },
+          "outTime": {
+            "type": "string",
+            "format": "time"
+          },
+          "otStart": {
+            "type": "string",
+            "format": "time"
+          },
+          "otEnd": {
+            "type": "string",
+            "format": "time"
+          },
+          "totalRegularHours": {
+            "type": "string",
+            "format": "time"
+          },
+          "totalOvertimeHours": {
+            "type": "string",
+            "format": "time"
+          },
+          "dayType": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "attendanceStatusID": {
+            "type": "string",
+            "nullable": true
+          },
+          "attendanceStatus": {
+            "$ref": "#/components/schemas/AttendanceStatus"
+          },
+          "employeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeInformation": {
+            "$ref": "#/components/schemas/EmployeeInformation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AttendanceStatus": {
+        "type": "object",
+        "properties": {
+          "attendanceStatusID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "statusName": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusShortName": {
+            "type": "string",
+            "nullable": true
+          },
+          "attendanceRecords": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttendanceRecord"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Building": {
+        "type": "object",
+        "properties": {
+          "buildingID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "floor": {
+            "type": "string",
+            "nullable": true
+          },
+          "roomNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyID": {
+            "type": "string",
+            "nullable": true
+          },
+          "company": {
+            "$ref": "#/components/schemas/Company"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Company": {
+        "required": [
+          "companyAddress",
+          "companyName",
+          "companyNameLocal",
+          "companyShortName",
+          "email",
+          "faxNumber",
+          "phoneNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "companyID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "companyName": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "companyShortName": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "companyNameLocal": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "companyAddress": {
+            "maxLength": 250,
+            "minLength": 0,
+            "type": "string"
+          },
+          "phoneNumber": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "faxNumber": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "email": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "departments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Department"
+            },
+            "nullable": true
+          },
+          "units": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Unit"
+            },
+            "nullable": true
+          },
+          "sectionss": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Sections"
+            },
+            "nullable": true
+          },
+          "lineInformations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LineInformation"
+            },
+            "nullable": true
+          },
+          "buildings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Building"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DateWiseOfficeTime": {
+        "type": "object",
+        "properties": {
+          "dateWiseOfficeTimeID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "shiftStartDateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "shiftEndDateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "consideredLunchHour": {
+            "type": "string",
+            "format": "time"
+          },
+          "breakDuration": {
+            "type": "string",
+            "format": "time"
+          },
+          "employeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeInformation": {
+            "$ref": "#/components/schemas/EmployeeInformation"
+          },
+          "shiftEmployees": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShiftEmployee"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Department": {
+        "required": [
+          "departmentName",
+          "departmentNameLocal",
+          "departmentShortName"
+        ],
+        "type": "object",
+        "properties": {
+          "departmentID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "departmentName": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "departmentShortName": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "departmentNameLocal": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "companyID": {
+            "type": "string",
+            "nullable": true
+          },
+          "company": {
+            "$ref": "#/components/schemas/Company"
+          },
+          "employeeInformation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeInformation"
+            },
+            "nullable": true
+          },
+          "salaryRecords": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalaryRecord"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Division": {
+        "required": [
+          "divisionName"
+        ],
+        "type": "object",
+        "properties": {
+          "divisionID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "divisionName": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string"
+          },
+          "divisionShortName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lineInformation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LineInformation"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EarlyLeaveInformation": {
+        "type": "object",
+        "properties": {
+          "earlyLeaveInformationID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "leaveDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "leaveTime": {
+            "type": "string",
+            "format": "time"
+          },
+          "remarks": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeInformation": {
+            "$ref": "#/components/schemas/EmployeeInformation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeeInformation": {
+        "required": [
+          "employeeName",
+          "employeeNameLocal",
+          "isMobileBanking",
+          "nationalIDNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "employeeID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "isLineSelected": {
+            "type": "string",
+            "nullable": true
+          },
+          "lineID": {
+            "type": "string",
+            "nullable": true
+          },
+          "lineInformation": {
+            "$ref": "#/components/schemas/LineInformation"
+          },
+          "employeeName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "employeeNameLocal": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string"
+          },
+          "companyID": {
+            "type": "string",
+            "nullable": true
+          },
+          "company": {
+            "$ref": "#/components/schemas/Company"
+          },
+          "unitID": {
+            "type": "string",
+            "nullable": true
+          },
+          "divisionID": {
+            "type": "string",
+            "nullable": true
+          },
+          "departmentID": {
+            "type": "string",
+            "nullable": true
+          },
+          "sectionID": {
+            "type": "string",
+            "nullable": true
+          },
+          "designationID": {
+            "type": "string",
+            "nullable": true
+          },
+          "gradeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "grade": {
+            "$ref": "#/components/schemas/Grade"
+          },
+          "shiftEmployeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "shiftEmployee": {
+            "$ref": "#/components/schemas/ShiftEmployee"
+          },
+          "proximityNumber": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "isOTAllowed": {
+            "type": "boolean"
+          },
+          "gender": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "iDentificationMark": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employmentTypeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "presentAddress": {
+            "maxLength": 250,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "permanentAddress": {
+            "maxLength": 250,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "telephone": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "mobileNumber": {
+            "maxLength": 15,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "nationalIDNumber": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string"
+          },
+          "isMobileBanking": {
+            "type": "boolean"
+          },
+          "accountNumber": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "bankName": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "fatherName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "fatherNameLocal": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "fatherOccupation": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "motherName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "motherNameLocal": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "motherOccupation": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "placeOfBirth": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "districtOfBirth": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "nationality": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "religion": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "bloodGroup": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "maritalStatus": {
+            "maxLength": 15,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfMarriage": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "appointmentType": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "joiningDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "postingDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "confirmationDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "retirementDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "serviceLength": {
+            "maxLength": 15,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "spouseName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "spouseOccupation": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "spouseDateOfBirth": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "spouseBloodGroup": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "currentSalary": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "salaryAtJoining": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "salaryGradeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "salaryGrade": {
+            "$ref": "#/components/schemas/SalaryGrade"
+          },
+          "salaryStepID": {
+            "type": "string",
+            "nullable": true
+          },
+          "salaryStep": {
+            "$ref": "#/components/schemas/SalaryStep"
+          },
+          "passportNumber": {
+            "maxLength": 15,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "passportIssueDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "passportExpiryDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "passportIssuePlace": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "passportIssueAuthority": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "licenseNumber": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "licenseIssueDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "licenseExpiryDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "licenseIssuePlace": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "licenseIssueAuthority": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "membershipCardNumber": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "association": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "membershipType": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "membershipValidityDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "referenceName1": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "referenceAddress1": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "referencePhone1": {
+            "maxLength": 15,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "referenceOccupation1": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "referenceRelation1": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "referenceName2": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "referenceAddress2": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "referencePhone2": {
+            "maxLength": 15,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "referenceOccupation2": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "referenceRelation2": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "localAreaClerance": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "localAreaRemarks": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employeePhoto": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employeeSignature": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "oldEmployeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "previousEmployeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "weeklyHoliDay": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "approvedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "employeeStatus": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "attendanceBonuses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttendanceBonus"
+            },
+            "nullable": true
+          },
+          "attendanceRecords": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttendanceRecord"
+            },
+            "nullable": true
+          },
+          "dateWiseOfficeTimes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DateWiseOfficeTime"
+            },
+            "nullable": true
+          },
+          "earlyLeaveInformations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EarlyLeaveInformation"
+            },
+            "nullable": true
+          },
+          "overTimes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OverTime"
+            },
+            "nullable": true
+          },
+          "lateApprovals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LateApproval"
+            },
+            "nullable": true
+          },
+          "leaveApprovals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LeaveApproval"
+            },
+            "nullable": true
+          },
+          "leaveRecords": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LeaveRecord"
+            },
+            "nullable": true
+          },
+          "manualAttendances": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ManualAttendance"
+            },
+            "nullable": true
+          },
+          "salaryRecords": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalaryRecord"
+            },
+            "nullable": true
+          },
+          "shiftTimes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShiftTime"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Grade": {
+        "required": [
+          "basic",
+          "conveyanceAllowance",
+          "fromGrossSalary",
+          "gradeName",
+          "gradeShortID",
+          "gross",
+          "houseRent",
+          "lunchAllowance",
+          "toGrossSalary"
+        ],
+        "type": "object",
+        "properties": {
+          "gradeID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "gradeShortID": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "gradeName": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "fromGrossSalary": {
+            "type": "number",
+            "format": "double"
+          },
+          "toGrossSalary": {
+            "type": "number",
+            "format": "double"
+          },
+          "gross": {
+            "type": "number",
+            "format": "double"
+          },
+          "basic": {
+            "type": "number",
+            "format": "double"
+          },
+          "houseRent": {
+            "type": "number",
+            "format": "double"
+          },
+          "medical": {
+            "type": "number",
+            "format": "double"
+          },
+          "conveyanceAllowance": {
+            "type": "number",
+            "format": "double"
+          },
+          "lunchAllowance": {
+            "type": "number",
+            "format": "double"
+          },
+          "salaryGrades": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalaryGrade"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LateApproval": {
+        "type": "object",
+        "properties": {
+          "lateApprovalID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "lateDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lateReason": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "entryUser": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeInformation": {
+            "$ref": "#/components/schemas/EmployeeInformation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LeaveApproval": {
+        "required": [
+          "entryDate"
+        ],
+        "type": "object",
+        "properties": {
+          "leaveApprovalID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "leaveTypeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "leaveType": {
+            "$ref": "#/components/schemas/LeaveType"
+          },
+          "leaveFromDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "leaveToDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "remarks": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "approvedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "leaveEnjoyed": {
+            "maxLength": 8,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "totalLeave": {
+            "maxLength": 4,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "providedLeave": {
+            "maxLength": 4,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeInformations": {
+            "$ref": "#/components/schemas/EmployeeInformation"
+          },
+          "entryUser": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "entryDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LeaveRecord": {
+        "type": "object",
+        "properties": {
+          "leaveRecordID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "leaveDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "remarks": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "leaveTypeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "leaveType": {
+            "$ref": "#/components/schemas/LeaveType"
+          },
+          "totalLeave": {
+            "type": "string",
+            "nullable": true
+          },
+          "leaveEnjoyed": {
+            "maxLength": 4,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "approvedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "employeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeInformation": {
+            "$ref": "#/components/schemas/EmployeeInformation"
+          },
+          "entryUser": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "entryDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LeaveType": {
+        "type": "object",
+        "properties": {
+          "leaveTypeID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "leaveTypeName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "entryUser": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "entryDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "leaveRecords": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LeaveRecord"
+            },
+            "nullable": true
+          },
+          "leaveApprovals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LeaveApproval"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LineInformation": {
+        "type": "object",
+        "properties": {
+          "lineID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "lineName": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "entryDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "unitID": {
+            "type": "string",
+            "nullable": true
+          },
+          "unit": {
+            "$ref": "#/components/schemas/Unit"
+          },
+          "buildingID": {
+            "type": "string",
+            "nullable": true
+          },
+          "building": {
+            "$ref": "#/components/schemas/Building"
+          },
+          "sectionsID": {
+            "type": "string",
+            "nullable": true
+          },
+          "sections": {
+            "$ref": "#/components/schemas/Sections"
+          },
+          "companyID": {
+            "type": "string",
+            "nullable": true
+          },
+          "company": {
+            "$ref": "#/components/schemas/Company"
+          },
+          "divisionID": {
+            "type": "string",
+            "nullable": true
+          },
+          "division": {
+            "$ref": "#/components/schemas/Division"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ManualAttendance": {
+        "required": [
+          "entryUser",
+          "outTime"
+        ],
+        "type": "object",
+        "properties": {
+          "manualAttendanceID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "attendanceDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "attendanceTime": {
+            "maxLength": 12,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "entryDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reason": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "entryUser": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "outTime": {
+            "maxLength": 12,
+            "minLength": 0,
+            "type": "string"
+          },
+          "remarks": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeInformation": {
+            "$ref": "#/components/schemas/EmployeeInformation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OverTime": {
+        "type": "object",
+        "properties": {
+          "overTimeID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "otDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "otStartTime": {
+            "type": "string",
+            "format": "time"
+          },
+          "otEndTime": {
+            "type": "string",
+            "format": "time"
+          },
+          "employeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeInformation": {
+            "$ref": "#/components/schemas/EmployeeInformation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SalaryGrade": {
+        "type": "object",
+        "properties": {
+          "salaryGradeID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "gradeName": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "gradeStatus": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ruleName": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "effectiveDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "gradeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "grade": {
+            "$ref": "#/components/schemas/Grade"
+          },
+          "employeeInformation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeInformation"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SalaryRecord": {
+        "required": [
+          "actualGross",
+          "attendanceBonus",
+          "basic",
+          "gross",
+          "houseRent",
+          "medicalAllowance",
+          "monthDays",
+          "netPayable",
+          "nightBillAmount",
+          "otHours",
+          "otRate",
+          "punchDays",
+          "salaryAdvance",
+          "salaryID",
+          "specialAllowance",
+          "tax",
+          "totalHoliDay",
+          "totalLeave",
+          "workingDays"
+        ],
+        "type": "object",
+        "properties": {
+          "salaryRecordID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "salaryStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "salaryEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "salaryStepID": {
+            "type": "string",
+            "nullable": true
+          },
+          "salaryStep": {
+            "$ref": "#/components/schemas/SalaryStep"
+          },
+          "joiningDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "monthDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "punchDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalHoliDay": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalLeave": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "workingDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "absenteeism": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "gross": {
+            "type": "number",
+            "format": "currency"
+          },
+          "actualGross": {
+            "type": "number",
+            "format": "currency"
+          },
+          "basic": {
+            "type": "number",
+            "format": "currency"
+          },
+          "houseRent": {
+            "type": "number",
+            "format": "currency"
+          },
+          "medicalAllowance": {
+            "type": "number",
+            "format": "currency"
+          },
+          "mobileAllowance": {
+            "type": "number",
+            "format": "double"
+          },
+          "otherAllowances": {
+            "type": "number",
+            "format": "double"
+          },
+          "lunchAllowance": {
+            "type": "number",
+            "format": "double"
+          },
+          "tax": {
+            "type": "number",
+            "format": "double"
+          },
+          "otherDeduction": {
+            "type": "number",
+            "format": "double"
+          },
+          "otHours": {
+            "type": "number",
+            "format": "double"
+          },
+          "otAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "byBankAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "byCashAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "netPayable": {
+            "type": "number",
+            "format": "currency"
+          },
+          "conveyanceAllowance": {
+            "type": "number",
+            "format": "double"
+          },
+          "attendanceBonus": {
+            "type": "number",
+            "format": "double"
+          },
+          "specialAllowance": {
+            "type": "number",
+            "format": "double"
+          },
+          "salaryAdvance": {
+            "type": "number",
+            "format": "double"
+          },
+          "foodCharge": {
+            "type": "number",
+            "format": "double"
+          },
+          "otRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "tiffinAllowance": {
+            "type": "number",
+            "format": "double"
+          },
+          "arrear": {
+            "type": "number",
+            "format": "double"
+          },
+          "specialBonus": {
+            "type": "number",
+            "format": "double"
+          },
+          "leaveStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "holiDayBillAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "nightBillAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "salaryID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lunchBillAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "mobileBanking": {
+            "type": "boolean"
+          },
+          "accountNumber": {
+            "maxLength": 50,
+            "type": "string",
+            "nullable": true
+          },
+          "bankName": {
+            "maxLength": 50,
+            "type": "string",
+            "nullable": true
+          },
+          "processDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "employeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeInformation": {
+            "$ref": "#/components/schemas/EmployeeInformation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SalaryStep": {
+        "required": [
+          "basicSalary",
+          "gradeID",
+          "stepNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "salaryStepID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "gradeID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "grade": {
+            "$ref": "#/components/schemas/Grade"
+          },
+          "stepNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "basicSalary": {
+            "type": "number",
+            "format": "double"
+          },
+          "houseAllowance": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "medicalAllowance": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "conveyanceAllowance": {
+            "type": "number",
+            "format": "double"
+          },
+          "lunchAllowance": {
+            "type": "number",
+            "format": "double"
+          },
+          "grossSalary": {
+            "type": "number",
+            "format": "double"
+          },
+          "stepStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeInformations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeInformation"
+            },
+            "nullable": true
+          },
+          "salaryRecords": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SalaryRecord"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Sections": {
+        "type": "object",
+        "properties": {
+          "sectionsID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "sectionName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sectionShortName": {
+            "maxLength": 7,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "sectionNameNative": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "companyID": {
+            "type": "string",
+            "nullable": true
+          },
+          "company": {
+            "$ref": "#/components/schemas/Company"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShiftEmployee": {
+        "type": "object",
+        "properties": {
+          "shiftEmployeeID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "fromDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "toDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dateWiseOfficeTimeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateWiseOfficeTime": {
+            "$ref": "#/components/schemas/DateWiseOfficeTime"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShiftTime": {
+        "type": "object",
+        "properties": {
+          "shiftID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "shiftName": {
+            "maxLength": 30,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "shiftStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "shiftEnd": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "consideredLunchHour": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "breakDuration": {
+            "type": "number",
+            "format": "double"
+          },
+          "employeeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeInformation": {
+            "$ref": "#/components/schemas/EmployeeInformation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Unit": {
+        "type": "object",
+        "properties": {
+          "unitID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "unitName": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "companyID": {
+            "type": "string",
+            "nullable": true
+          },
+          "company": {
+            "$ref": "#/components/schemas/Company"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
