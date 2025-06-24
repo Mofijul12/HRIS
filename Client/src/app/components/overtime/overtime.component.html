@@ -1,0 +1,72 @@
+<div class="container mt-4">
+  <h2>Over Time Management</h2>
+
+  <form (submit)="onSubmit()" class="mb-3">
+    <div class="row mb-2">
+<div class="col">
+  <label>Overtime ID</label>
+  <input [(ngModel)]="Form.overTimeID" name="overTimeID" class="form-control" required placeholder="OT001">
+</div>
+      <div class="col">
+        <label>Date</label>
+        <input type="date" [(ngModel)]="Form.otDate" name="otDate" class="form-control" required>
+      </div>
+      <div class="col">
+        <label>OT Start Time</label>
+        <input type="text" [(ngModel)]="Form.otStartTime" name="otStartTime" class="form-control" required>
+      </div>
+       <div class="col">
+        <label>OT End Time</label>
+        <input type="text" [(ngModel)]="Form.otEndTime" name="otEndTime" class="form-control"  required>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col">
+    <label>Employe ID</label>
+    <select [(ngModel)]="Form.employeeID" name="employeeID" class="form-control" required>
+    <option value="E001">E001</option>
+    <option value="E002">E002</option>
+    <option value="E003">E003</option>
+    <option value="E004">E004</option>
+    <option value="E005">E005</option>
+  </select>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary" type="submit">
+          {{ isEdit ? 'Update' : 'Add' }}
+        </button>
+        <button class="btn btn-secondary ms-2" type="button" (click)="resetForm()">Clear</button>
+      </div>
+    </div>
+  </form>
+
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>Over Time ID</th>
+        <th>OT Date</th>
+        <th>Ot Start Date</th>
+        <th>OT End Date</th>
+        <th>Employee ID</th>
+        <th style="width: 150px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of overtime">
+        <td>{{ item.overTimeID }}</td>
+        <td>{{ item.otDate }}</td>
+        <td>{{ item.otStartTime }}</td>
+        <td>{{ item.otEndTime }}</td>
+         <td>{{ item.employeeID }}</td>
+        <td>
+          <button class="btn btn-sm btn-info me-2" (click)="editItem(item)">Edit</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteItem(item.overTimeID!)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

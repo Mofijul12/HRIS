@@ -1,0 +1,66 @@
+<div class="container mt-4">
+  <h2>Shift Employee Management</h2>
+
+  <form (submit)="onSubmit()" class="mb-3">
+    <div class="row mb-2">
+<div class="col">
+  <label>Shif Employee ID</label>
+  <input type="text" [(ngModel)]="Form.shiftEmployeeID" name="shiftEmployeeID" class="form-control" required placeholder="SE001">
+</div>
+      <div class="col">
+        <label>From</label>
+        <input type="date" [(ngModel)]="Form.fromDate" name="fromDate" class="form-control" required>
+      </div>
+      <div class="col">
+        <label>To</label>
+        <input type="date" [(ngModel)]="Form.toDate" name="toDate" class="form-control" placeholder="To Date" required>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col">
+    <label>DateWiseOfficeTimeID</label>
+    <select [(ngModel)]="Form.dateWiseOfficeTimeID" name="dateWiseOfficeTimeID" class="form-control" required>
+    <option value="DOT001">DOT001</option>
+    <option value="DOT002">DOT002</option>
+    <option value="DOT003">DOT003</option>
+    <option value="DOT004">DOT004</option>
+    <option value="DOT005">DOT005</option>
+  </select>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary" type="submit">
+          {{ isEdit ? 'Update' : 'Add' }}
+        </button>
+        <button class="btn btn-secondary ms-2" type="button" (click)="resetForm()">Clear</button>
+      </div>
+    </div>
+  </form>
+
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th> ID</th>
+        <th>From Date</th>
+        <th>To Date</th>
+        <th>DateWise OfficeTime ID</th>
+        <th style="width: 150px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of shiftEmp">
+        <td>{{ item.shiftEmployeeID }}</td>
+        <td>{{ item.fromDate }}</td>
+        <td>{{ item.toDate }}</td>
+        <td>{{ item.dateWiseOfficeTimeID }}</td>
+        <td>
+          <button class="btn btn-sm btn-info me-2" (click)="editItem(item)">Edit</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteItem(item.shiftEmployeeID!)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
