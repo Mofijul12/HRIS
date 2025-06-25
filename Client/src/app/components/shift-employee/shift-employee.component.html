@@ -5,7 +5,7 @@
     <div class="row mb-2">
 <div class="col">
   <label>Shif Employee ID</label>
-  <input type="text" [(ngModel)]="Form.shiftEmployeeID" name="shiftEmployeeID" class="form-control" required placeholder="SE001">
+  <input type="text" [(ngModel)]="Form.shiftEmployeeID" name="shiftEmployeeID" class="form-control" required readonly>
 </div>
       <div class="col">
         <label>From</label>
@@ -48,7 +48,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of shiftEmp">
+      <tr *ngFor="let item of shifEmp">
         <td>{{ item.shiftEmployeeID }}</td>
         <td>{{ item.fromDate }}</td>
         <td>{{ item.toDate }}</td>

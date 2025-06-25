@@ -5,7 +5,11 @@
     <div class="row mb-2">
 <div class="col">
   <label>Overtime ID</label>
-  <input [(ngModel)]="Form.overTimeID" name="overTimeID" class="form-control" required placeholder="OT001">
+  <input [(ngModel)]="Form.overTimeID"
+         name="overTimeID"
+         class="form-control"
+         placeholder="OT001"
+         readonly> <!-- This prevents manual editing -->
 </div>
       <div class="col">
         <label>Date</label>

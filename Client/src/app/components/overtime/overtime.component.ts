@@ -20,10 +20,21 @@ export class OvertimeComponent implements OnInit{
       }
     
         getAll(): void {
-        this.svc.getAll().subscribe(data => {
-          this.overtime = data;
-        });
-      }
+  this.svc.getAll().subscribe(data => {
+    this.overtime = data;
+
+
+    const maxId = this.overtime.reduce((max, item) => {
+      const num = parseInt(item.overTimeID!.replace('OT', ''), 10);
+      return isNaN(num) ? max : Math.max(max, num);
+    }, 0);
+
+
+    const nextId = `OT${(maxId + 1).toString().padStart(3, '0')}`;
+    this.Form.overTimeID = nextId;
+  });
+}
+
     
        onSubmit(): void {
         if (this.isEdit) {

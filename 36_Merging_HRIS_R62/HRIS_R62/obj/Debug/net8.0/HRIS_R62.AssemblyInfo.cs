@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HRIS_R62")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72897715971376eab9c413b506bfa8910515a092")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+895380c534c3b3c321065650cab219f047eb14ec")]
 [assembly: System.Reflection.AssemblyProductAttribute("HRIS_R62")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HRIS_R62")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
