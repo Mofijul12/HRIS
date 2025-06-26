@@ -3,11 +3,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Overtime } from '../models/overtime';
 
+export interface Employee {
+  employeeID: string; 
+  employeeName: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class OvertimeService {
 
+  private empUrl = 'http://localhost:19243/api/EmployeeInformations';
   private apiUrl = 'http://localhost:19243/api/OverTimes';
     
       constructor(private http:HttpClient) { }
@@ -26,5 +32,9 @@ export class OvertimeService {
     
         delete(id: string): Observable<any> {
         return this.http.delete(`${this.apiUrl}/${id}`);
-      }
+        }
+  
+        getEmployees(): Observable<Employee[]> {
+          return this.http.get<Employee[]>(this.empUrl);
+        }
 }

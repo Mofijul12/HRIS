@@ -5,7 +5,7 @@
     <div class="row mb-2">
 <div class="col">
   <label>Shif Employee ID</label>
-  <input type="text" [(ngModel)]="Form.shiftEmployeeID" name="shiftEmployeeID" class="form-control" required placeholder="SE001">
+  <input type="text" [(ngModel)]="Form.shiftEmployeeID" name="shiftEmployeeID" class="form-control" required readonly>
 </div>
       <div class="col">
         <label>From</label>
@@ -21,11 +21,9 @@
       <div class="col">
     <label>DateWiseOfficeTimeID</label>
     <select [(ngModel)]="Form.dateWiseOfficeTimeID" name="dateWiseOfficeTimeID" class="form-control" required>
-    <option value="DOT001">DOT001</option>
-    <option value="DOT002">DOT002</option>
-    <option value="DOT003">DOT003</option>
-    <option value="DOT004">DOT004</option>
-    <option value="DOT005">DOT005</option>
+    <option *ngFor="let dt of dateWiseOTime" [value]="dt.dateWiseOfficeTimeID">
+      {{dt.dateWiseOfficeTimeID}}
+    </option> 
   </select>
       </div>
       <div class="col">
@@ -48,7 +46,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of shiftEmp">
+      <tr *ngFor="let item of shifEmp">
         <td>{{ item.shiftEmployeeID }}</td>
         <td>{{ item.fromDate }}</td>
         <td>{{ item.toDate }}</td>

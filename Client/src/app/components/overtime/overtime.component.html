@@ -5,7 +5,11 @@
     <div class="row mb-2">
 <div class="col">
   <label>Overtime ID</label>
-  <input [(ngModel)]="Form.overTimeID" name="overTimeID" class="form-control" required placeholder="OT001">
+  <input [(ngModel)]="Form.overTimeID"
+         name="overTimeID"
+         class="form-control"
+         placeholder="OT001"
+         readonly> <!-- This prevents manual editing -->
 </div>
       <div class="col">
         <label>Date</label>
@@ -25,12 +29,10 @@
       <div class="col">
     <label>Employe ID</label>
     <select [(ngModel)]="Form.employeeID" name="employeeID" class="form-control" required>
-    <option value="E001">E001</option>
-    <option value="E002">E002</option>
-    <option value="E003">E003</option>
-    <option value="E004">E004</option>
-    <option value="E005">E005</option>
-  </select>
+      <option *ngFor="let emp of employee" [value]="emp.employeeID">
+        {{ emp.employeeID }} - {{ emp.employeeName }}
+      </option>
+    </select>
       </div>
       <div class="col">
         <button class="btn btn-primary" type="submit">

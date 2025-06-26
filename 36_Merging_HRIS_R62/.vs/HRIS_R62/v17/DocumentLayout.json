@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\HomePC\\Desktop\\HRIS\\HRIS\\36_Merging_HRIS_R62\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|c:\\users\\homepc\\desktop\\hris\\hris\\36_merging_hris_r62\\hris_r62\\controller\\datewiseofficetimescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|solutionrelative:hris_r62\\controller\\datewiseofficetimescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|c:\\users\\homepc\\desktop\\hris\\hris\\36_merging_hris_r62\\hris_r62\\controller\\employeeinformationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|solutionrelative:hris_r62\\controller\\employeeinformationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|c:\\users\\homepc\\desktop\\hris\\hris\\36_merging_hris_r62\\hris_r62\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|solutionrelative:hris_r62\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|c:\\users\\homepc\\desktop\\hris\\hris\\36_merging_hris_r62\\hris_r62\\models\\attendance_required\\attendancerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|solutionrelative:hris_r62\\models\\attendance_required\\attendancerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|c:\\users\\homepc\\desktop\\hris\\hris\\36_merging_hris_r62\\hris_r62\\models\\attendance_required\\shiftemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|solutionrelative:hris_r62\\models\\attendance_required\\shiftemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|c:\\users\\homepc\\desktop\\hris\\hris\\36_merging_hris_r62\\hris_r62\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|solutionrelative:hris_r62\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{71375A33-D68B-46D0-AB7B-9B94532E1DC0}|HRIS_R62\\HRIS_R62.csproj|c:\\users\\homepc\\desktop\\hris\\hris\\36_merging_hris_r62\\hris_r62\\controller\\overtimescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,6 +71,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DateWiseOfficeTimesController.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\HRIS\\HRIS\\36_Merging_HRIS_R62\\HRIS_R62\\Controller\\DateWiseOfficeTimesController.cs",
+              "RelativeDocumentMoniker": "HRIS_R62\\Controller\\DateWiseOfficeTimesController.cs",
+              "ToolTip": "C:\\Users\\HomePC\\Desktop\\HRIS\\HRIS\\36_Merging_HRIS_R62\\HRIS_R62\\Controller\\DateWiseOfficeTimesController.cs",
+              "RelativeToolTip": "HRIS_R62\\Controller\\DateWiseOfficeTimesController.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAqwHoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T07:35:50.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeInformationsController.cs",
+              "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\HRIS\\HRIS\\36_Merging_HRIS_R62\\HRIS_R62\\Controller\\EmployeeInformationsController.cs",
+              "RelativeDocumentMoniker": "HRIS_R62\\Controller\\EmployeeInformationsController.cs",
+              "ToolTip": "C:\\Users\\HomePC\\Desktop\\HRIS\\HRIS\\36_Merging_HRIS_R62\\HRIS_R62\\Controller\\EmployeeInformationsController.cs",
+              "RelativeToolTip": "HRIS_R62\\Controller\\EmployeeInformationsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T06:58:10.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AttendanceRecord.cs",
               "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\HRIS\\HRIS\\36_Merging_HRIS_R62\\HRIS_R62\\Models\\Attendance_Required\\AttendanceRecord.cs",
               "RelativeDocumentMoniker": "HRIS_R62\\Models\\Attendance_Required\\AttendanceRecord.cs",
@@ -75,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ShiftEmployee.cs",
               "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\HRIS\\HRIS\\36_Merging_HRIS_R62\\HRIS_R62\\Models\\Attendance_Required\\ShiftEmployee.cs",
               "RelativeDocumentMoniker": "HRIS_R62\\Models\\Attendance_Required\\ShiftEmployee.cs",
@@ -87,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "ShiftEmployeesController.cs",
               "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\HRIS\\HRIS\\36_Merging_HRIS_R62\\HRIS_R62\\Controller\\ShiftEmployeesController.cs",
               "RelativeDocumentMoniker": "HRIS_R62\\Controller\\ShiftEmployeesController.cs",
@@ -99,19 +133,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\HRIS\\HRIS\\36_Merging_HRIS_R62\\HRIS_R62\\appsettings.json",
               "RelativeDocumentMoniker": "HRIS_R62\\appsettings.json",
               "ToolTip": "C:\\Users\\HomePC\\Desktop\\HRIS\\HRIS\\36_Merging_HRIS_R62\\HRIS_R62\\appsettings.json",
               "RelativeToolTip": "HRIS_R62\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-23T17:55:07.081Z"
+              "WhenOpened": "2025-06-23T17:55:07.081Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "OverTime.cs",
               "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\HRIS\\HRIS\\36_Merging_HRIS_R62\\HRIS_R62\\Models\\Attendance_Required\\OverTime.cs",
               "RelativeDocumentMoniker": "HRIS_R62\\Models\\Attendance_Required\\OverTime.cs",
@@ -119,12 +154,11 @@
               "RelativeToolTip": "HRIS_R62\\Models\\Attendance_Required\\OverTime.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T17:54:14.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-23T17:54:14.516Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "OverTimesController.cs",
               "DocumentMoniker": "C:\\Users\\HomePC\\Desktop\\HRIS\\HRIS\\36_Merging_HRIS_R62\\HRIS_R62\\Controller\\OverTimesController.cs",
               "RelativeDocumentMoniker": "HRIS_R62\\Controller\\OverTimesController.cs",

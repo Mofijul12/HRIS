@@ -5,6 +5,370 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/DateWiseOfficeTimes": {
+      "get": {
+        "tags": [
+          "DateWiseOfficeTimes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DateWiseOfficeTime"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DateWiseOfficeTime"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DateWiseOfficeTime"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "DateWiseOfficeTimes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DateWiseOfficeTime"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DateWiseOfficeTime"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DateWiseOfficeTime"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DateWiseOfficeTime"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DateWiseOfficeTime"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DateWiseOfficeTime"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DateWiseOfficeTimes/{id}": {
+      "get": {
+        "tags": [
+          "DateWiseOfficeTimes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DateWiseOfficeTime"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DateWiseOfficeTime"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DateWiseOfficeTime"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "DateWiseOfficeTimes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DateWiseOfficeTime"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DateWiseOfficeTime"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DateWiseOfficeTime"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "DateWiseOfficeTimes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/EmployeeInformations": {
+      "get": {
+        "tags": [
+          "EmployeeInformations"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmployeeInformation"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmployeeInformation"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmployeeInformation"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "EmployeeInformations"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeInformation"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeInformation"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeInformation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeInformation"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeInformation"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeInformation"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/EmployeeInformations/{id}": {
+      "get": {
+        "tags": [
+          "EmployeeInformations"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeInformation"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeInformation"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeInformation"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "EmployeeInformations"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeInformation"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeInformation"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeInformation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "EmployeeInformations"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/OverTimes": {
       "get": {
         "tags": [
@@ -368,6 +732,370 @@
           }
         }
       }
+    },
+    "/api/TiffinAllowanceRates": {
+      "get": {
+        "tags": [
+          "TiffinAllowanceRates"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TiffinAllowanceRate"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TiffinAllowanceRate"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TiffinAllowanceRate"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TiffinAllowanceRates"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TiffinAllowanceRate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TiffinAllowanceRate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TiffinAllowanceRate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiffinAllowanceRate"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiffinAllowanceRate"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiffinAllowanceRate"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TiffinAllowanceRates/{id}": {
+      "get": {
+        "tags": [
+          "TiffinAllowanceRates"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiffinAllowanceRate"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiffinAllowanceRate"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiffinAllowanceRate"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TiffinAllowanceRates"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TiffinAllowanceRate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TiffinAllowanceRate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TiffinAllowanceRate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TiffinAllowanceRates"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TiffinAllowanceTimes": {
+      "get": {
+        "tags": [
+          "TiffinAllowanceTimes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TiffinAllowanceTime"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TiffinAllowanceTime"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TiffinAllowanceTime"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TiffinAllowanceTimes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TiffinAllowanceTime"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TiffinAllowanceTime"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TiffinAllowanceTime"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiffinAllowanceTime"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiffinAllowanceTime"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiffinAllowanceTime"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TiffinAllowanceTimes/{id}": {
+      "get": {
+        "tags": [
+          "TiffinAllowanceTimes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiffinAllowanceTime"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiffinAllowanceTime"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TiffinAllowanceTime"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TiffinAllowanceTimes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TiffinAllowanceTime"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TiffinAllowanceTime"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TiffinAllowanceTime"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TiffinAllowanceTimes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -702,6 +1430,46 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/SalaryRecord"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Designation": {
+        "required": [
+          "designationName",
+          "designationShortName"
+        ],
+        "type": "object",
+        "properties": {
+          "designationID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "designationName": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "designationShortName": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "employeeInformation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeInformation"
+            },
+            "nullable": true
+          },
+          "tiffinAllowanceRates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TiffinAllowanceRate"
             },
             "nullable": true
           }
@@ -1356,6 +2124,47 @@
         },
         "additionalProperties": false
       },
+      "EmploymentType": {
+        "required": [
+          "employmentTypeName"
+        ],
+        "type": "object",
+        "properties": {
+          "employmentTypeID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employmentTypeName": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "nightAllowances": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NightAllowance"
+            },
+            "nullable": true
+          },
+          "nightAllowancesTime": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NightAllowanceTime"
+            },
+            "nullable": true
+          },
+          "tiffinAllowanceTimes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TiffinAllowanceTime"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Grade": {
         "required": [
           "basic",
@@ -1752,6 +2561,82 @@
           },
           "employeeInformation": {
             "$ref": "#/components/schemas/EmployeeInformation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NightAllowance": {
+        "type": "object",
+        "properties": {
+          "nightAllowanceID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "salaryMinimum": {
+            "type": "number",
+            "format": "double"
+          },
+          "salaryMaximum": {
+            "type": "number",
+            "format": "double"
+          },
+          "nightAllowanceRate": {
+            "type": "string",
+            "nullable": true
+          },
+          "employmentTypeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeType": {
+            "$ref": "#/components/schemas/EmploymentType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NightAllowanceTime": {
+        "type": "object",
+        "properties": {
+          "nightAllowanceTimeID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "allowanceType": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "nightHours": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "nightMinutes": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "employmentTypeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeType": {
+            "$ref": "#/components/schemas/EmploymentType"
           }
         },
         "additionalProperties": false
@@ -2234,6 +3119,62 @@
           },
           "employeeInformation": {
             "$ref": "#/components/schemas/EmployeeInformation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TiffinAllowanceRate": {
+        "type": "object",
+        "properties": {
+          "tiffinAllowanceRateID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "rateInTaka": {
+            "type": "number",
+            "format": "double"
+          },
+          "designationID": {
+            "type": "string",
+            "nullable": true
+          },
+          "designation": {
+            "$ref": "#/components/schemas/Designation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TiffinAllowanceTime": {
+        "type": "object",
+        "properties": {
+          "tiffinAllowanceID": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "allowanceDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "allowanceType": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "time": {
+            "type": "string",
+            "format": "time"
+          },
+          "employmentTypeID": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeType": {
+            "$ref": "#/components/schemas/EmploymentType"
           }
         },
         "additionalProperties": false

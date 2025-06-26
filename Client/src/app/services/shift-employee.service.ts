@@ -3,12 +3,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ShiftEmployee } from '../models/shift-employee';
 
+export interface DateWiseOfficeTime{
+  dateWiseOfficeTimeID:string
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class ShiftEmployeeService {
 
   private apiUrl = 'http://localhost:19243/api/ShiftEmployees';
+  private DtwiseUrl = 'http://localhost:19243/api/DateWiseOfficeTimes';
   
     constructor(private http:HttpClient) { }
   
@@ -26,5 +31,8 @@ export class ShiftEmployeeService {
   
       delete(id: string): Observable<any> {
       return this.http.delete(`${this.apiUrl}/${id}`);
-    }
+      }
+  getdateWiseOfficeTime(): Observable<DateWiseOfficeTime[]>{
+    return this.http.get<DateWiseOfficeTime[]>(this.DtwiseUrl);
+  }
 }

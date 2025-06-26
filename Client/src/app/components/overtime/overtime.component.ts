@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Overtime } from 'src/app/models/overtime';
-import { OvertimeService } from 'src/app/services/overtime.service';
+import { Employee, OvertimeService } from 'src/app/services/overtime.service';
 
 @Component({
   selector: 'app-overtime',
@@ -11,19 +11,44 @@ export class OvertimeComponent implements OnInit{
   
    overtime:Overtime[] = [];
       Form: Overtime = { overTimeID: '', otDate:'', otStartTime: '',otEndTime:'',employeeID: ''};
-      isEdit: boolean = false;
+  isEdit: boolean = false;
+  
+  employee: Employee[] = [];
+
     
        constructor(private svc: OvertimeService) {}
     
       ngOnInit(): void {
         this.getAll();
+        this.loadEmployees(); // ✅ Load employee list on init
       }
     
         getAll(): void {
-        this.svc.getAll().subscribe(data => {
-          this.overtime = data;
-        });
+  this.svc.getAll().subscribe(data => {
+    this.overtime = data;
+
+
+    const maxId = this.overtime.reduce((max, item) => {
+      const num = parseInt(item.overTimeID!.replace('OT', ''), 10);
+      return isNaN(num) ? max : Math.max(max, num);
+    }, 0);
+
+
+    const nextId = `OT${(maxId + 1).toString().padStart(3, '0')}`;
+    this.Form.overTimeID = nextId;
+  });
+  }
+  loadEmployees() {
+    this.svc.getEmployees().subscribe({
+      next: (data) => {
+        this.employee = data;
+      },
+      error: (err) => {
+        console.error('Failed to load employees', err);
       }
+    });
+  }
+
     
        onSubmit(): void {
         if (this.isEdit) {
