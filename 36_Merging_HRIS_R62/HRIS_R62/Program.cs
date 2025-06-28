@@ -2,6 +2,7 @@
 using HRIS_R62.Models;
 //using HRIS_R62.RepoForSp;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace HRIS_R62
 {
@@ -13,6 +14,14 @@ namespace HRIS_R62
 
 
             builder.Services.AddControllers();
+
+
+            //For TimeOnly ataType
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                options.JsonSerializerOptions.Converters.Add(new TimeOnlyJsonConverter());
+            });
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
